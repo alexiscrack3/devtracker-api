@@ -1,0 +1,2 @@
+class RoadMap < ApplicationRecord
+end
