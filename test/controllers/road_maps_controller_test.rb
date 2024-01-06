@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "test_helper"
 
 class RoadMapsControllerTest < ActionDispatch::IntegrationTest
@@ -12,7 +14,9 @@ class RoadMapsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create road_map" do
     assert_difference("RoadMap.count") do
-      post road_maps_url, params: { road_map: { description: @road_map.description, title: @road_map.title } }, as: :json
+      post road_maps_url,
+        params: { road_map: { description: @road_map.description, title: @road_map.title } },
+        as: :json
     end
 
     assert_response :created
@@ -24,7 +28,9 @@ class RoadMapsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update road_map" do
-    patch road_map_url(@road_map), params: { road_map: { description: @road_map.description, title: @road_map.title } }, as: :json
+    patch road_map_url(@road_map),
+      params: { road_map: { description: @road_map.description, title: @road_map.title } },
+      as: :json
     assert_response :success
   end
 
